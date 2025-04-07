@@ -13,15 +13,17 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
-        const animals = ["cane", "gatto", "elefante", "tigre", "leone", "giraffa", "orso", "lupo", "volpe", "zebra", "cervo", "coniglio", "koala", "panda", "ippopotamo"];
-
-        animals.sort((a, b) => {
-            return a.localeCompare(b)
-        })
+        const { useState } = React;
 
         function AnimalsList() {
+            const [animals, setAnimals] = useState([]);
+            const animalsChoices = ["Cane", "Gatto", "Pappagallo", "Cavallo", "Panda"];
+            const randomIndex = Math.floor(Math.random() * animalsChoices.length);
+            const randomAnimal = animalsChoices[randomIndex];
+
             return (
                 <>
+                    <button onClick={() => setAnimals([...animals, randomAnimal])}>Aggiungi Animale</button>
                     <details>
                         <summary>Animali</summary>
                         <ul>
