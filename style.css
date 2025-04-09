@@ -41,6 +41,11 @@ img {
     width: 100%;
 }
 
+.list-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .modal-container {
     position: fixed;
     top: 0;
